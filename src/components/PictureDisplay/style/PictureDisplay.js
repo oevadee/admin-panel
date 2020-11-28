@@ -12,6 +12,6 @@ export const PictureContainer = styled.div`
 export const Image = styled.img`
   width: 378px;
   height: 504px;
-  object-fit: cover contain;
+  object-fit: cover;
   border-radius: 3px;
 `

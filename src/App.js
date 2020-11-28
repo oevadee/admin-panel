@@ -1,16 +1,11 @@
 import Header from "./components/Header";
-import PictureAdder from "./components/PictureAdder";
-import PictureDisplay from "./components/PictureDisplay";
+import Dashboard from './routes/Dashboard';
 
 function App() {
   return (
-    // BEM
     <>
       <Header />
-      <div style={{display: "flex"}}>
-        <PictureDisplay />
-        <PictureAdder />
-      </div>
+      <Dashboard />
     </>
   );
 }
