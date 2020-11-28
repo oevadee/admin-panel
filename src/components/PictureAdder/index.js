@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AdderContainer,
   Header,
@@ -7,10 +7,13 @@ import {
   SubmitButton,
 } from "./style/PictureAdder";
 import ImageSearchIcon from "@material-ui/icons/ImageSearch";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setGalleryOpen } from "../../slices/appSlice";
+
 
 const PictureAdder = ({ setImage }) => {
   const [buttonVisible, setButtonVisible] = useState(false);
+  const dispatch = useDispatch();
 
   const imageChoose = (e) => {
     if (e.target.files[0]) {
@@ -22,6 +25,11 @@ const PictureAdder = ({ setImage }) => {
 
       reader.readAsDataURL(e.target.files[0]);
       setButtonVisible(true);
+      dispatch(
+        setGalleryOpen({
+          galleryOpen: false,
+        })
+      );
     }
   };
 

@@ -6,8 +6,8 @@ export const appSlice = createSlice({
     galleryOpen: true,
   },
   reducers: {
-    setGalleryOpen: state => {
-      state.galleryOpen = !state.galleryOpen;
+    setGalleryOpen: (state, action) => {
+      state.galleryOpen = action.payload.galleryOpen;
     }
   },
 });
