@@ -15,12 +15,12 @@ export const AddSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 `;
 
 export const Header = styled.h1`
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  margin: 20px 0 40px;
 `;
 
 export const ImageSelector = styled.div`
@@ -28,19 +28,25 @@ export const ImageSelector = styled.div`
   width: 189px;
   height: 252px;
   flex: 1;
-  background-color: rgba(65, 90, 119, 0.2);
+  background-color: rgba(65, 90, 119, 0.05);
+  border: solid 1px rgba(65, 90, 119, 0.2);
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background-color: rgba(65, 90, 119, 0.2);
+    border: solid 1px rgba(65, 90, 119, 0.2);
+  }
 `;
 
 export const SubmitButton = styled.button`
   width: 100%;
   height: 60px;
   border-radius: 15px;
-  background-color: #eee;
+  background-color: #ccc;
   color: rgb(65, 90, 119);
   transition: all 0.2s ease-in;
   font-size: 1rem;
@@ -51,6 +57,6 @@ export const SubmitButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: #fff;
+    background-color: #eee;
   }
-`
+`;

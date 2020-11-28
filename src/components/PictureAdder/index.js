@@ -7,8 +7,11 @@ import {
   SubmitButton,
 } from "./style/PictureAdder";
 import ImageSearchIcon from "@material-ui/icons/ImageSearch";
+import { useState } from "react";
 
 const PictureAdder = ({ setImage }) => {
+  const [buttonVisible, setButtonVisible] = useState(false);
+
   const imageChoose = (e) => {
     if (e.target.files[0]) {
       const reader = new FileReader();
@@ -18,6 +21,7 @@ const PictureAdder = ({ setImage }) => {
       };
 
       reader.readAsDataURL(e.target.files[0]);
+      setButtonVisible(true);
     }
   };
 
@@ -36,7 +40,7 @@ const PictureAdder = ({ setImage }) => {
             />
           </ImageSelector>
         </label>
-        <SubmitButton>Add a picture</SubmitButton>
+        {buttonVisible ? <SubmitButton>Add a picture</SubmitButton> : <></>}
       </AddSection>
     </AdderContainer>
   );
