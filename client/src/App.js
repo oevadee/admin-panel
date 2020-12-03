@@ -19,7 +19,7 @@ const history = createHashHistory();
 function App() {
   return (
     <>
-      {/* <Provider
+      <Provider
         store={createAdminStore({
           dataProvider,
           history,
@@ -32,9 +32,9 @@ function App() {
           />
           <Resource name="users" list={UserList} icon={UserIcon} />
         </Admin>
-      </Provider> */}
-      <Header />
-      <Dashboard />
+      </Provider>
+      {/* <Header />
+      <Dashboard /> */}
     </>
   );
 }

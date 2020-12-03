@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const AdderContainer = styled.div`
+  flex: 1;
   width: 50%;
   height: calc(100vh - 80px);
-  padding: 40px 60px;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +16,13 @@ export const AddSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 `;
 
 export const Header = styled.h1`
   font-size: 3.5rem;
   font-weight: bold;
+  text-align: center;
 `;
 
 export const ImageSelector = styled.div`

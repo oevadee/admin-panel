@@ -36,15 +36,15 @@ const PictureAdder = ({ setImage, image }) => {
     }
   };
 
-  const handleImageSubmit = (values) => {
-    console.log(values);
+  const handleImageSubmit = (val) => {
+    console.log(val);
 
     let formData = new FormData();
-    formData.append("image", values.image);
+    formData.append("image", val.image);
 
     axios
-      .post("/profile", formData, {
-        headers: new Headers({ Accept: "application/json" }),
+      .post("http://localhost:8080/images", formData, {
+        headers: new Headers({ Accept: "application/x-www-form-urlencoded" }),
       })
       .then((res) => console.log("success", res.data))
       .catch((err) => console.log(err));
@@ -81,7 +81,7 @@ const PictureAdder = ({ setImage, image }) => {
                 </ImageSelector>
               </label>
               {buttonVisible ? (
-                <SubmitButton onClick={handleImageSubmit}>
+                <SubmitButton type="submit" onClick={handleImageSubmit}>
                   Add a picture
                 </SubmitButton>
               ) : (

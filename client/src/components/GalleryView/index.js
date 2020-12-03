@@ -1,29 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   GalleryContainer,
   GalleryImage,
   GallerySection,
 } from "./style/GalleryView";
+import axios from "axios";
 
-const gallery = [
-  "/img/IMG_2979.jpeg",
-  "/img/IMG_6531.JPG",
-  "/img/IMG_6546.JPG",
-  "/img/IMG_6723.JPG",
-  "/img/IMG_6726.JPG",
-  "/img/IMG_6727.JPG",
-  "/img/IMG_6730.JPG",
-  "/img/IMG_6731.JPG",
-  "/img/IMG_6737.JPG",
-];
+const tranformLinkToBackEnd = (image) => `http://localhost:8080/${image}`;
 
 const GalleryView = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/images")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <GalleryContainer>
       <GallerySection>
-        {gallery.map((image) => (
-          <GalleryImage src={image} alt="" />
-        ))}
+        {data ? (
+          data.images.map(({ image, _id }) => (
+            <GalleryImage src={tranformLinkToBackEnd(image)} key={_id} alt="" />
+          ))
+        ) : (
+          <></>
+        )}
       </GallerySection>
     </GalleryContainer>
   );

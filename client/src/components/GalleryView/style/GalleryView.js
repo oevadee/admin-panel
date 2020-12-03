@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const GalleryContainer = styled.div`
+  flex: 1;
   width: 50%;
   height: calc(100vh - 80px);
-  padding: 40px 60px;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
   align-items: center;

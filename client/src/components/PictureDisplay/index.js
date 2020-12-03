@@ -1,10 +1,15 @@
 import React from 'react'
 import { PictureContainer, Image } from './style/PictureDisplay'
 
-const PictureDisplay = ({ image = '/img/IMG_2979.jpeg' }) => {
+const PictureDisplay = ({ image }) => {
   return (
     <PictureContainer>
-      <Image src={image} alt="balkon"/>
+      {image ? (
+        <Image src={image} alt="balkon"/>
+      ) : (
+        // <div style={{width: '100%', height: '100%', backgroundColor: '#fff'}}></div>
+        <></>
+      )}
     </PictureContainer>
   )
 }

@@ -34,7 +34,7 @@ router.get("/", (req, res, next) => {
             image: doc.image,
             request: {
               type: "GET",
-              url: "http://localhost:8080/images/" + doc._id,
+              url: "http://localhost:8080/" + doc.image,
             },
           };
         }),

@@ -20,7 +20,11 @@ const Dashboard = () => {
       {galeryOpen ? (
         <GalleryView />
       ) : (
-        <PictureDisplay image={image} />
+        image ? (
+          <PictureDisplay image={image} />
+        ) : (
+          <></>
+        )
       )}
       <PictureAdder setImage={setImage} image={image} />
     </DashboardContainer>
